@@ -31,7 +31,7 @@ public class TaskDetailsPresenter  implements TaskDetailsMVP.Presenter{
         if(bundle != null){
             title = bundle.getString(Constant.ATTR_TITLE);
             task = dao.findByTitle(title);
-            view.updateUI(task.getTitle(), task.getDescription());
+            view.updateUI(task.getTitle(), task.getDescription(), task.getCreationDate());
         }
     }
 

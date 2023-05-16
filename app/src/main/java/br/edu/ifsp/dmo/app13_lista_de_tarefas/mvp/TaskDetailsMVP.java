@@ -4,7 +4,7 @@ import android.os.Bundle;
 
 public interface TaskDetailsMVP {
     interface View{
-        void updateUI(String title, String description);
+        void updateUI(String title, String description, String creationDate);
 
         Bundle getBundle();
 
