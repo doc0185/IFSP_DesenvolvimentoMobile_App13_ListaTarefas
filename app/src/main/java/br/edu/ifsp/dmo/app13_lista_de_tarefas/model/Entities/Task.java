@@ -9,7 +9,7 @@ public class Task {
     private String title;
     private String description;
     private String creationDate;
-    private Boolean important;
+    private boolean important;
     private List<Tag> tags;
 
     private void init(){
