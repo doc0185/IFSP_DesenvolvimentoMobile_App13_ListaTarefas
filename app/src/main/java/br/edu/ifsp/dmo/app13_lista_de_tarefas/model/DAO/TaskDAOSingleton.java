@@ -20,8 +20,6 @@ public class TaskDAOSingleton implements ITaskDAO{
         return instance;
     }
 
-
-
     @Override
     public void create(Task task) {
         if(task != null){

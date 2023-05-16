@@ -29,7 +29,7 @@ public class TasksDetailsActivity extends AppCompatActivity implements TaskDetai
         presenter = new TaskDetailsPresenter(this);
         findViews();
         setListener();
-        setToolbar();
+        //setToolbar();
     }
 
     @Override

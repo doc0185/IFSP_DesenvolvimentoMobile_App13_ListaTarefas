@@ -32,7 +32,7 @@ public class ItemPocketRecyclerAdapter extends RecyclerView.Adapter<ItemPocketRe
 
     @NonNull
     @Override
-    public ItemPocketRecyclerAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view;
         view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.recycledview_item, parent, false);
@@ -41,7 +41,7 @@ public class ItemPocketRecyclerAdapter extends RecyclerView.Adapter<ItemPocketRe
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ItemPocketRecyclerAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Task task = data.get(position);
         holder.titleTextView.setText(task.getTitle());
         if(task.isImportant()){

@@ -1,5 +1,7 @@
 package br.edu.ifsp.dmo.app13_lista_de_tarefas.model.Entities;
 
+import androidx.annotation.NonNull;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -73,5 +75,10 @@ public class Task {
         return tags;
     }
 
+    @NonNull
+    @Override
+    public String toString() {
+        return "Title: " + title;
+    }
 
 }
