@@ -21,6 +21,14 @@ public class Task {
         init();
     }
 
+    public Task(String title, String description, String creationDate, boolean important) {
+        this.title = title;
+        this.description = description;
+        this.creationDate = creationDate;
+        this.important = important;
+        init();
+    }
+
     public String getTitle() {
         return title;
     }

@@ -42,6 +42,7 @@ public class MainPresenter implements MainMVP.Presenter{
 
     @Override
     public void populateList(RecyclerView recyclerView) {
+        /*A COMPLETAR */
         /*
         ItemPocketRecyclerAdapter adapter = new
                 ItemPocketRecyclerAdapter(view.getContext(), dao.findAll(), this);
