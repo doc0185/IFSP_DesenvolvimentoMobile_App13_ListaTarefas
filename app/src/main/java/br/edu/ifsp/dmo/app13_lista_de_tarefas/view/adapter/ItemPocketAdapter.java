@@ -1,6 +1,7 @@
 package br.edu.ifsp.dmo.app13_lista_de_tarefas.view.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -55,9 +56,9 @@ public class ItemPocketAdapter extends ArrayAdapter {
         holder.titleTextView.setText(task.getTitle());
 
         if(task.isImportant()){
-            holder.starImageView.setColorFilter(getContext().getColor(R.color.black));
-        }else{
             holder.starImageView.setColorFilter(getContext().getColor(R.color.white));
+        }else{
+            holder.starImageView.setColorFilter(getContext().getColor(R.color.black));
         }
 
         return convertView;

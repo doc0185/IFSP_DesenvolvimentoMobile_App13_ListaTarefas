@@ -29,7 +29,7 @@ public class TasksDetailsActivity extends AppCompatActivity implements TaskDetai
         presenter = new TaskDetailsPresenter(this);
         findViews();
         setListener();
-        //setToolbar();
+        setToolbar();
     }
 
     @Override
@@ -99,6 +99,8 @@ public class TasksDetailsActivity extends AppCompatActivity implements TaskDetai
     }
 
     private void setToolbar(){
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
     }
 }

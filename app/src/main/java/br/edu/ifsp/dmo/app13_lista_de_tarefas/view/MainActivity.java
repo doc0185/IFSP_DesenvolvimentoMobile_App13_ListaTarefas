@@ -48,7 +48,6 @@ public class MainActivity extends AppCompatActivity implements MainMVP.View {
 
     private void findViews(){
         actionButton = findViewById(R.id.fab_add_task);
-        //listView = findViewById(R.id.list_article);
         recyclerView = findViewById(R.id.recyclerview_task);
     }
 
