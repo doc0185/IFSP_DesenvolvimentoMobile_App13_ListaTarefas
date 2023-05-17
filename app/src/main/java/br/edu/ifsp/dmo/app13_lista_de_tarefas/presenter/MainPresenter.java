@@ -67,4 +67,8 @@ public class MainPresenter implements MainMVP.Presenter{
         task.setImportant(!task.isImportant());
         dao.update(task.getTitle(), task);
     }
+
+    public void deleteTask(Task task){
+        dao.delete(task);
+    }
 }

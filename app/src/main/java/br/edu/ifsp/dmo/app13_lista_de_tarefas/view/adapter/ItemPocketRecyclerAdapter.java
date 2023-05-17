@@ -63,6 +63,13 @@ public class ItemPocketRecyclerAdapter extends RecyclerView.Adapter<ItemPocketRe
                 pencilClick(task);
             }
         });
+
+        holder.deleteImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                deleteClick(task);
+            }
+        });
     }
 
     @Override
@@ -85,12 +92,18 @@ public class ItemPocketRecyclerAdapter extends RecyclerView.Adapter<ItemPocketRe
         notifyDataSetChanged();
     }
 
+    private void deleteClick(Task task){
+        presenter.deleteTask(task);
+        notifyDataSetChanged();
+    }
+
 
     public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         public TextView titleTextView;
         public ImageView starImageView;
         public  ImageView pencilImageView;
+        public ImageView deleteImageView;
 
 
         public ViewHolder(View itemView){
@@ -98,6 +111,7 @@ public class ItemPocketRecyclerAdapter extends RecyclerView.Adapter<ItemPocketRe
             titleTextView = itemView.findViewById(R.id.text_title_listitem);
             starImageView = itemView.findViewById(R.id.imageView);
             pencilImageView = itemView.findViewById(R.id.imageView2);
+            deleteImageView = itemView.findViewById(R.id.imageView3);
 
             itemView.setOnClickListener(this);
         }

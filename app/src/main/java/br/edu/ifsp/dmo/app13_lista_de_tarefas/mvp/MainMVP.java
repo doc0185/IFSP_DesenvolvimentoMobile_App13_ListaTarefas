@@ -21,5 +21,7 @@ public interface MainMVP {
         void populateList(RecyclerView recyclerView);
 
         void favoriteTask(Task task);
+
+        void deleteTask(Task task);
     }
 }

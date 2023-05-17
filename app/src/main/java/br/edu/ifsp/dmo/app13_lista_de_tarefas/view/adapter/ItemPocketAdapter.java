@@ -40,6 +40,7 @@ public class ItemPocketAdapter extends ArrayAdapter {
             holder.titleTextView = convertView.findViewById(R.id.text_title_listitem);
             holder.starImageView = convertView.findViewById(R.id.imageView);
             holder.pencilImageView = convertView.findViewById(R.id.imageView2);
+            holder.deleteImageView = convertView.findViewById(R.id.imageView3);
 
             holder.starImageView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -54,6 +55,14 @@ public class ItemPocketAdapter extends ArrayAdapter {
                     pencilClick(position);
                 }
             });
+
+            holder.deleteImageView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    deleteClick(position);
+                }
+            });
+
 
             convertView.setTag(holder);
         }else{
@@ -84,9 +93,16 @@ public class ItemPocketAdapter extends ArrayAdapter {
         notifyDataSetChanged();
     }
 
+    private void deleteClick(int position){
+        Task task = (Task) getItem(position);
+        presenter.deleteTask(task);
+        notifyDataSetChanged();
+    }
+
     private static class ViewHolder{
         public TextView titleTextView;
         public ImageView starImageView;
         public ImageView pencilImageView;
+        public ImageView deleteImageView;
     }
 }
