@@ -48,13 +48,14 @@ public class MainPresenter implements MainMVP.Presenter{
 
         ItemPocketRecyclerAdapter adapter = new
                 ItemPocketRecyclerAdapter(view.getContext(), dao.findAll(), this);
+        /*
         adapter.setClickListener(new RecyclerViewItemClickListener() {
             @Override
             public void onItemClick(int position) {
                 task = dao.findAll().get(position);
                 openDetails(task);
             }
-        });
+        }); */
         RecyclerView.LayoutManager layoutManager = new
                 LinearLayoutManager(view.getContext());
         recyclerView.setLayoutManager(layoutManager);
