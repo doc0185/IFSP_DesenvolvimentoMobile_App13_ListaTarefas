@@ -26,6 +26,7 @@ public class TaskDAOSingleton implements ITaskDAO{
         if(task != null){
             dataset.add(task);
             Collections.sort(dataset);
+            //Collections.sort(dataset, Collections.reverseOrder());
         }
     }
 
@@ -43,6 +44,7 @@ public class TaskDAOSingleton implements ITaskDAO{
             inDataset.getTags().clear();
             inDataset.getTags().addAll(task.getTags());
             Collections.sort(dataset);
+            //Collections.sort(dataset, Collections.reverseOrder());
             return true;
         }
         return false;

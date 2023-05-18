@@ -3,6 +3,7 @@ package br.edu.ifsp.dmo.app13_lista_de_tarefas.model.Entities;
 import androidx.annotation.NonNull;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class Task implements Comparable<Task>{
@@ -85,6 +86,9 @@ public class Task implements Comparable<Task>{
 
     @Override
     public int compareTo(Task task) {
-        return this.title.compareTo(task.title);
+        //return this.isImportant().compareTo(task.isImportant());
+        return Comparator.comparing(Task::isImportant).reversed().thenComparing(Task::getTitle).compare(this, task);
+        //return this.title.compareTo(task.title);
+
     }
 }
