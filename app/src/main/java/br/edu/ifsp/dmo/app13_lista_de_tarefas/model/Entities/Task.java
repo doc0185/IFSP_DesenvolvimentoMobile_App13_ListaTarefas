@@ -5,7 +5,7 @@ import androidx.annotation.NonNull;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Task {
+public class Task implements Comparable<Task>{
     private String title;
     private String description;
     private String creationDate;
@@ -75,10 +75,16 @@ public class Task {
         return tags;
     }
 
+
+
     @NonNull
     @Override
     public String toString() {
         return "Title: " + title;
     }
 
+    @Override
+    public int compareTo(Task task) {
+        return this.title.compareTo(task.title);
+    }
 }
