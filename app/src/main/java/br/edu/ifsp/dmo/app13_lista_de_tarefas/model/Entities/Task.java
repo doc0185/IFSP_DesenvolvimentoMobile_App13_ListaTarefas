@@ -13,11 +13,6 @@ public class Task implements Comparable<Task>{
     private String description;
     private String creationDate;
     private boolean important;
-    private List<Tag> tags;
-
-    private void init(){
-        tags = new ArrayList<>();
-    }
 
     public Task(String title, String description){
         LocalDateTime localDate = LocalDateTime.now();
@@ -25,7 +20,6 @@ public class Task implements Comparable<Task>{
         this.title = title;
         this.description = description;
         this.creationDate = localDate.format(formatter);
-        init();
     }
 
     public Task(String title, String description, boolean important) {
@@ -35,7 +29,6 @@ public class Task implements Comparable<Task>{
         this.description = description;
         this.creationDate = localDate.format(formatter);
         this.important = important;
-        init();
     }
 
     public String getTitle() {
@@ -68,20 +61,6 @@ public class Task implements Comparable<Task>{
     public void setImportant(Boolean important) {
         this.important = important;
     }
-
-    public void addTag(Tag tag){
-        this.tags.add(tag);
-    }
-
-    public boolean removeTag(Tag tag){
-        return this.tags.remove(tag);
-    }
-
-    public List<Tag> getTags() {
-        return tags;
-    }
-
-
 
     @NonNull
     @Override

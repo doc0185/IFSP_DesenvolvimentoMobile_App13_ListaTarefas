@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import br.edu.ifsp.dmo.app13_lista_de_tarefas.model.Entities.Tag;
 import br.edu.ifsp.dmo.app13_lista_de_tarefas.model.Entities.Task;
 import br.edu.ifsp.dmo.app13_lista_de_tarefas.utils.Constant;
 
@@ -56,8 +55,6 @@ public class TaskDAOSingleton implements ITaskDAO{
             inDataset.setTitle(task.getTitle());
             inDataset.setDescription(task.getDescription());
             inDataset.setImportant(task.isImportant());
-            inDataset.getTags().clear();
-            inDataset.getTags().addAll(task.getTags());
             Collections.sort(dataset);
             writeDataset();
             readDatabase();
@@ -79,19 +76,6 @@ public class TaskDAOSingleton implements ITaskDAO{
                 .filter(task -> task.getTitle().equals(title))
                 .findFirst()
                 .orElse(null);
-    }
-
-    @Override
-    public List<Task> findByTag(Tag tag) {
-        List<Task> selection = new ArrayList<>();
-        for(Task a : dataset){
-            for(Tag t : a.getTags()){
-                if(t.getTagName().equals(tag.getTagName())){
-                    selection.add(a);
-                }
-            }
-        }
-        return selection;
     }
 
     private void writeDataset(){

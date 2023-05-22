@@ -11,6 +11,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+
+import java.util.Objects;
+
 import br.edu.ifsp.dmo.app13_lista_de_tarefas.R;
 import br.edu.ifsp.dmo.app13_lista_de_tarefas.mvp.TaskDetailsMVP;
 import br.edu.ifsp.dmo.app13_lista_de_tarefas.presenter.TaskDetailsPresenter;
@@ -105,8 +108,8 @@ public class TasksDetailsActivity extends AppCompatActivity implements TaskDetai
     }
 
     private void setToolbar(){
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        }
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
 }
