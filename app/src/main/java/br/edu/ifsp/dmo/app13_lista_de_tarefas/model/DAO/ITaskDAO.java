@@ -12,7 +12,7 @@ public interface ITaskDAO {
 
     boolean update(String oldTitle, Task task);
 
-    boolean delete(Task task);
+    void delete(Task task);
 
     void setContext (Context context);
 

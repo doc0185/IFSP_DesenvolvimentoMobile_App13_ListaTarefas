@@ -42,7 +42,6 @@ public class TaskDAOSingleton implements ITaskDAO{
             Collections.sort(dataset);
             writeDataset();
             readDatabase();
-            //Collections.sort(dataset, Collections.reverseOrder());
         }
     }
 
@@ -62,18 +61,16 @@ public class TaskDAOSingleton implements ITaskDAO{
             Collections.sort(dataset);
             writeDataset();
             readDatabase();
-            //Collections.sort(dataset, Collections.reverseOrder());
             return true;
         }
         return false;
     }
 
     @Override
-    public boolean delete(Task task) {
+    public void delete(Task task) {
         dataset.remove(task);
         writeDataset();
         readDatabase();
-        return true;
     }
 
     @Override
