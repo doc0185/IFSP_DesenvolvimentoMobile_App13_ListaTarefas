@@ -1,5 +1,7 @@
 package br.edu.ifsp.dmo.app13_lista_de_tarefas.presenter;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import br.edu.ifsp.dmo.app13_lista_de_tarefas.model.DAO.ITaskDAO;
@@ -11,12 +13,15 @@ import br.edu.ifsp.dmo.app13_lista_de_tarefas.utils.Constant;
 public class TaskDetailsPresenter  implements TaskDetailsMVP.Presenter{
     private TaskDetailsMVP.View view;
     private Task task;
+    private Context context;
     private ITaskDAO dao;
 
     public TaskDetailsPresenter(TaskDetailsMVP.View view) {
         this.view = view;
         task = null;
         dao = TaskDAOSingleton.getInstance();
+        context = view.getContext();
+        dao.setContext(context);
     }
 
     @Override

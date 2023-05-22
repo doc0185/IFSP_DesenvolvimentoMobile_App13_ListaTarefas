@@ -3,6 +3,7 @@ package br.edu.ifsp.dmo.app13_lista_de_tarefas.view;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -62,6 +63,11 @@ public class TasksDetailsActivity extends AppCompatActivity implements TaskDetai
         return super.onOptionsItemSelected(item);
     }
 
+
+    @Override
+    public Context getContext() {
+        return this;
+    }
 
     @Override
     public void updateUI(String title, String description, String creationDate) {

@@ -1,5 +1,7 @@
 package br.edu.ifsp.dmo.app13_lista_de_tarefas.model.DAO;
 
+import android.content.Context;
+
 import java.util.List;
 
 import br.edu.ifsp.dmo.app13_lista_de_tarefas.model.Entities.Tag;
@@ -11,6 +13,8 @@ public interface ITaskDAO {
     boolean update(String oldTitle, Task task);
 
     boolean delete(Task task);
+
+    void setContext (Context context);
 
     Task findByTitle(String title);
 

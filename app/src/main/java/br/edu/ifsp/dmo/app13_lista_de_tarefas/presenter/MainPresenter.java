@@ -1,5 +1,6 @@
 package br.edu.ifsp.dmo.app13_lista_de_tarefas.presenter;
 
+import android.content.Context;
 import android.content.Intent;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -16,12 +17,15 @@ import br.edu.ifsp.dmo.app13_lista_de_tarefas.view.adapter.ItemPocketRecyclerAda
 
 public class MainPresenter implements MainMVP.Presenter{
     private MainMVP.View view;
+    private Context context;
     private ITaskDAO dao;
     Task task;
 
     public MainPresenter(MainMVP.View view) {
         this.view = view;
         dao = TaskDAOSingleton.getInstance();
+        context = view.getContext();
+        dao.setContext(context);
     }
 
 
