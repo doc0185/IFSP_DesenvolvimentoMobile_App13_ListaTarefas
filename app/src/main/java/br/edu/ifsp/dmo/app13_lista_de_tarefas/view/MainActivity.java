@@ -13,6 +13,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import br.edu.ifsp.dmo.app13_lista_de_tarefas.R;
 import br.edu.ifsp.dmo.app13_lista_de_tarefas.mvp.MainMVP;
 import br.edu.ifsp.dmo.app13_lista_de_tarefas.presenter.MainPresenter;
+import br.edu.ifsp.dmo.app13_lista_de_tarefas.presenter.TaskDetailsPresenter;
 
 public class MainActivity extends AppCompatActivity implements MainMVP.View {
 
@@ -31,14 +32,27 @@ public class MainActivity extends AppCompatActivity implements MainMVP.View {
 
     @Override
     protected void onStart() {
-        super.onStart();
         presenter.populateList(recyclerView);
+
+        super.onStart();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
     }
 
     @Override
     protected void onDestroy() {
         presenter.deatach();
         super.onDestroy();
+    }
+
+    @Override
+    protected void onResume() {
+        presenter = new MainPresenter(this);
+        presenter.populateList(recyclerView);
+        super.onResume();
     }
 
     @Override

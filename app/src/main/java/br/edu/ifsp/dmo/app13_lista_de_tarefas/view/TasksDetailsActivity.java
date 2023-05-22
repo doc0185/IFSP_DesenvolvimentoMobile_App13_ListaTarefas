@@ -35,8 +35,8 @@ public class TasksDetailsActivity extends AppCompatActivity implements TaskDetai
 
     @Override
     protected void onStart() {
-        super.onStart();
         presenter.verifyUpdate();
+        super.onStart();
     }
 
     @Override

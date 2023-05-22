@@ -151,6 +151,7 @@ public class TaskDAOSingleton implements ITaskDAO{
 
     @Override
     public List<Task> findAll() {
+        readDatabase();
         return dataset;
     }
 }
