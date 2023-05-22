@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Lista de Tarefas</string>
+    <string name="descricao">Descrição</string>
+    <string name="data_criacao">Data Criação (automático)</string>
+    <string name="salvar">Salvar</string>
+    <string name="titulo">Título</string>
 </resources>
