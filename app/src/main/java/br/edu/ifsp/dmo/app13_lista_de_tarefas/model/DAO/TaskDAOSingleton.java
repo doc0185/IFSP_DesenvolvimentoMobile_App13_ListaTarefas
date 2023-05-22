@@ -138,7 +138,8 @@ public class TaskDAOSingleton implements ITaskDAO{
                 jsonArray = new JSONArray(json);
                 for(int i=0; i < jsonArray.length(); i++){
                     jsonObject = jsonArray.getJSONObject(i);
-                    task = new Task(jsonObject.getString(Constant.ATTR_TITLE), jsonObject.getString(Constant.ATTR_DESC), jsonObject.getString(Constant.ATTR_DATE), jsonObject.getBoolean(Constant.ATTR_IMPORTANT));
+                    task = new Task(jsonObject.getString(Constant.ATTR_TITLE), jsonObject.getString(Constant.ATTR_DESC), jsonObject.getBoolean(Constant.ATTR_IMPORTANT));
+                    task.setCreationDate(jsonObject.getString(Constant.ATTR_DATE));
                     dataset.add(task);
                 }
             }catch (JSONException e){

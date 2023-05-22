@@ -21,6 +21,6 @@ public interface TaskDetailsMVP {
 
         void verifyUpdate();
 
-        void saveTask(String title, String description, String creationDate);
+        void saveTask(String title, String description);
     }
 }

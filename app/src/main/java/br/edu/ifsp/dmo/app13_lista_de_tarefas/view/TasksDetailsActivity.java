@@ -50,8 +50,7 @@ public class TasksDetailsActivity extends AppCompatActivity implements TaskDetai
         if(v == saveButton){
             presenter.saveTask(
                     titleEditText.getText().toString(),
-                    descriptionEditText.getText().toString(),
-                    creationDateEditText.getText().toString());
+                    descriptionEditText.getText().toString());
         }
     }
 
@@ -98,6 +97,7 @@ public class TasksDetailsActivity extends AppCompatActivity implements TaskDetai
         descriptionEditText = findViewById(R.id.edittext_description_details);
         creationDateEditText = findViewById(R.id.edittext_date_details);
         saveButton = findViewById(R.id.button_save_task);
+        creationDateEditText.setEnabled(false);
     }
 
     private void setListener(){

@@ -2,6 +2,8 @@ package br.edu.ifsp.dmo.app13_lista_de_tarefas.model.Entities;
 
 import androidx.annotation.NonNull;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -17,17 +19,21 @@ public class Task implements Comparable<Task>{
         tags = new ArrayList<>();
     }
 
-    public Task(String title, String description, String creationDate){
+    public Task(String title, String description){
+        LocalDateTime localDate = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd LLLL yyyy");
         this.title = title;
         this.description = description;
-        this.creationDate = creationDate;
+        this.creationDate = localDate.format(formatter);
         init();
     }
 
-    public Task(String title, String description, String creationDate, boolean important) {
+    public Task(String title, String description, boolean important) {
+        LocalDateTime localDate = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd LLLL yyyy");
         this.title = title;
         this.description = description;
-        this.creationDate = creationDate;
+        this.creationDate = localDate.format(formatter);
         this.important = important;
         init();
     }
@@ -55,7 +61,6 @@ public class Task implements Comparable<Task>{
     public void setCreationDate(String creationDate) {
         this.creationDate = creationDate;
     }
-
     public Boolean isImportant() {
         return important;
     }
@@ -91,4 +96,6 @@ public class Task implements Comparable<Task>{
         //return this.title.compareTo(task.title);
 
     }
+
+
 }

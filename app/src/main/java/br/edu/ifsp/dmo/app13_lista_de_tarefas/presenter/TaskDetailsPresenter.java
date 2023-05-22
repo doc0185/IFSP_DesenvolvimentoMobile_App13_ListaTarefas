@@ -41,17 +41,17 @@ public class TaskDetailsPresenter  implements TaskDetailsMVP.Presenter{
     }
 
     @Override
-    public void saveTask(String title, String description, String creationDate) {
+    public void saveTask(String title, String description) {
         if (task == null) {
             //Nova tarefa
-            task = new Task(title, description, creationDate);
+            task = new Task(title, description);
             dao.create(task);
             view.showToast("Nova tarefa adicionada com sucesso.");
             view.close();
         } else {
             //Atualizar tarefa existente
             String oldTitle = task.getTitle();
-            Task newTask = new Task(title, description, creationDate, task.isImportant());
+            Task newTask = new Task(title, description, task.isImportant());
             if (dao.update(oldTitle, newTask)) {
                 view.showToast("Tarefa atualizada com sucesso.");
                 view.close();
