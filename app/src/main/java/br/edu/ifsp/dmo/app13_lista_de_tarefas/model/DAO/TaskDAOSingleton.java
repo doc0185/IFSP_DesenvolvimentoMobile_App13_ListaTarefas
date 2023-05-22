@@ -70,7 +70,10 @@ public class TaskDAOSingleton implements ITaskDAO{
 
     @Override
     public boolean delete(Task task) {
-        return dataset.remove(task);
+        dataset.remove(task);
+        writeDataset();
+        readDatabase();
+        return true;
     }
 
     @Override
